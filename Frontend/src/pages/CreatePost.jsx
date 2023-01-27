@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { preview } from "../ai_mern_app_assets/assets";
 import { getRandomPrompt } from "../utils";
 import { FormField, Loader } from "../components";
-
 const CreatePost = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -20,11 +19,11 @@ const CreatePost = () => {
       try {
         setGeneratingImg(true);
         const response = await fetch(
-          "https://dall-e-clone-lu5j.onrender.com/api/v1/dalle",
+          "https://dalle-ai-jby5.onrender.com/api/v1/dalle",
           {
             method: "POST",
             headers: {
-              "Content-type": "application/json",
+              "Content-Type": "application/json",
             },
             body: JSON.stringify({
               prompt: form.prompt,
@@ -47,11 +46,11 @@ const CreatePost = () => {
       try {
         setLoading(true);
         const response = await fetch(
-          "https://dall-e-clone-lu5j.onrender.com/api/v1/post",
+          "https://dalle-ai-jby5.onrender.com/api/v1/post",
           {
             method: "POST",
             headers: {
-              "Content-type": "application/json",
+              "Content-Type": "application/json",
             },
             body: JSON.stringify({
               ...form,
